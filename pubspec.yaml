@@ -32,8 +32,12 @@ flutter:
     platforms:
       ios:
         dartPluginClass: CoreHapticsPlugin
+        ffiPlugin: true
+        sharedDarwinSource: true
       macos:
         dartPluginClass: CoreHapticsPlugin
+        ffiPlugin: true
+        sharedDarwinSource: true
       android:
         dartPluginClass: CoreHapticsPlugin
       windows:

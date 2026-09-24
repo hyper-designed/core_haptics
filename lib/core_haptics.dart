@@ -5,4 +5,6 @@ export 'src/platform/haptic_service.dart'
     show HapticServiceFactory, HapticServiceBase;
 
 /// Dart-only plugin registrant placeholder.
-class CoreHapticsPlugin {}
+class CoreHapticsPlugin {
+  static void registerWith([Object? registrar]) {}
+}
