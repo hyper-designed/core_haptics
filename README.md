@@ -77,11 +77,11 @@ That's it! Flutter handles linking the native module for you.
 <summary><b>Manual setup <i>(if you can't use the SwiftPM feature flag)</i></b></summary>
 
 **Step 1:** Open your app in Xcode  
-`example/ios/Runner.xcworkspace` (or `macos/Runner.xcworkspace`)
+`ios/Runner.xcworkspace` (or `macos/Runner.xcworkspace`)
 
 **Step 2:** Add the local Swift Package  
 - File → Add Package Dependencies  
-- Click "Add Local..." and navigate to the plugin's `ios/` folder  
+- Click "Add Local..." and navigate to the plugin's `darwin/core_haptics/` folder  
 - Select `Package.swift` and add it
 
 **Step 3:** Link to your target  
@@ -357,7 +357,7 @@ Uses mocked FFI bridge for ~90% API coverage.
 
 **Swift native tests:**  
 ```bash
-cd ios && swift test
+cd darwin/core_haptics && swift test
 ```
 
 Tests the Core Haptics bridge _(skips on devices without haptics)_.

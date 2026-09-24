@@ -164,7 +164,7 @@ public func chffi_engine_stop(
     _ message: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>?
 ) -> Int32 {
     guard let box: EngineBox = fromHandle(handle) else { return invalidHandleCode }
-    var stopError: Int32 = 0
+    let stopError: Int32 = 0
     box.queue.sync {
         box.engine.stop(completionHandler: { _ in })
     }

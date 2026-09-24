@@ -1,3 +1,12 @@
+## 0.1.0
+
+* **BREAKING:** Restructured native sources from separate `ios/` and `macos/` directories into a unified `darwin/` folder using Flutter's `sharedDarwinSource` convention.
+* Added `ffiPlugin: true` to both iOS and macOS platform configurations in `pubspec.yaml`.
+* Fixed `CoreHapticsPlugin` registrant to include `registerWith` method for proper plugin registration.
+* Removed the bundled `example/` app — see the repository README for usage examples.
+* Removed native Swift unit tests (`ios/Tests/`) — moved to separate test infrastructure.
+* Added root `analysis_options.yaml` with `flutter_lints` and `public_member_api_docs` rule.
+
 ## 0.0.8
 
 * Remove unused `dart:typed_data` import.

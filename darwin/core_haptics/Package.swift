@@ -24,5 +24,9 @@ let package = Package(
             dependencies: [],
             path: "Sources/CoreHapticsFFI"
         ),
+        .testTarget(
+            name: "CoreHapticsFFITests",
+            dependencies: ["CoreHapticsFFI"]
+        ),
     ]
 )
