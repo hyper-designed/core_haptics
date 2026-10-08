@@ -167,9 +167,14 @@ class HapticEngine implements ffi.Finalizable {
   HapticEngineEventHandler? _onEvent;
   bool _disposed = false;
 
+  // Core Haptics invokes this callback from its own dispatch queue (for engine
+  // stopped/reset/interrupted events), not the isolate's mutator thread. A
+  // NativeCallable.isolateLocal aborts ("Cannot invoke native callback outside
+  // an isolate") when called off-isolate, so this must be a .listener, which
+  // safely marshals the call onto the isolate's event loop. The callback only
+  // forwards the event to a stream, so async delivery is fine.
   static final ffi.NativeCallable<EngineCallbackNative> _callbackTrampoline =
-      ffi.NativeCallable<EngineCallbackNative>.isolateLocal(
-          _nativeEventCallback);
+      ffi.NativeCallable<EngineCallbackNative>.listener(_nativeEventCallback);
 
   static void _nativeEventCallback(
     int eventCode,

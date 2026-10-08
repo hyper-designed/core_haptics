@@ -1,3 +1,7 @@
+## 0.2.0
+
+* Fixed a crash ("Cannot invoke native callback outside an isolate") when Core Haptics reported engine stopped/reset/interrupted events. The native event callback is now a `NativeCallable.listener`, so events are delivered asynchronously on the isolate's event loop.
+
 ## 0.1.0
 
 * **BREAKING:** Restructured native sources from separate `ios/` and `macos/` directories into a unified `darwin/` folder using Flutter's `sharedDarwinSource` convention.
